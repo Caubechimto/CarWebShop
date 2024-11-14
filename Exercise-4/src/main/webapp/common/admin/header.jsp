@@ -16,7 +16,7 @@
         <div class="navbar-buttons navbar-header pull-right" role="navigation">
             <ul class="nav ace-nav">
                 <li class="light-10">
-                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                    <a data-toggle="dropdown" href="/spring-boot/admin/home" class="dropdown-toggle">
                         Xin chào, <%=SecurityUtils.getPrincipal().getFullName()%>
                         <i class="ace-icon fa fa-caret-down"></i>
                     </a>

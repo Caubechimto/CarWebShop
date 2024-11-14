@@ -17,7 +17,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Trang chủ</a>
+								<a href="/spring-boot/trang-chu">Trang chủ</a>
 							</li>
 							<li class="active">Quản lý toà nhà</li>
 						</ul><!-- /.breadcrumb -->
