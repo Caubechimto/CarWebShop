@@ -9,7 +9,7 @@ public class AbstractDTO<T> implements Serializable {
 
     private static final long serialVersionUID = 7213600440729202783L;
 
-    private Long id;
+    private Integer id;
     private Date createdDate;
     private String createdBy;
     private Date modifiedDate;
@@ -24,11 +24,11 @@ public class AbstractDTO<T> implements Serializable {
     private Integer totalItem;
     private String searchValue;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

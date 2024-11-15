@@ -112,7 +112,7 @@
                                             <button id="btnDelete" type="button" disabled
                                                     class="dt-button buttons-html5 btn btn-white btn-primary btn-bold"
                                                     data-toggle="tooltip"
-                                                    title="Xóa bài viết" onclick="warningBeforeDelete()">
+                                                    title="Xóa tài khoản" onclick="warningBeforeDelete()">
 															<span>
 																<i class="fa fa-trash-o bigger-110 pink"></i>
 															</span>
@@ -144,14 +144,14 @@
                                         <display:column headerClass="text-left" property="userName" title="Tên"/>
                                         <display:column headerClass="text-left" property="fullName" title="full name"/>
                                         <display:column headerClass="col-actions" title="Thao tác">
-                                            <c:if test="${tableList.roleCode != 'MANAGER'}">
+                                            <c:if test="${tableList.roleCode != 'ADMIN'}">
                                                 <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
                                                    title="Cập nhật người dùng"
                                                    href='<c:url value="/admin/user-edit-${tableList.id}"/>'>
                                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                 </a>
                                             </c:if>
-                                            <c:if test="${tableList.roleCode == 'MANAGER'}">
+                                            <c:if test="${tableList.roleCode == 'ADMIN'}">
                                                 <p>Không đươc thao tác</p>
                                             </c:if>
                                         </display:column>
