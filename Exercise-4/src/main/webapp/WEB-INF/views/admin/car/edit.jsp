@@ -7,6 +7,7 @@
 <title>Thêm hoặc sửa thông tin xe</title>
 </head>
 <body>
+
 			<div class="main-content">
 				<div class="main-content-inner">
 					<div class="breadcrumbs" id="breadcrumbs">
@@ -29,6 +30,16 @@
 							<h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 								Thêm hoặc sửa thông tin xe
 							</h1>
+<c:if test="${param.Error != null}">
+	<div class="alert alert-danger">	
+		Chưa nhập đủ thông tin
+	</div>
+</c:if>
+<c:if test="${param.Success != null}">
+	<div class="alert alert-danger">	
+		Thêm thành công
+	</div>
+</c:if>						
 						</div><!-- /.page-header -->
 
 						<div class="row" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
@@ -42,19 +53,19 @@
 											</div>
 										</dl>
 										<dl class="form-group">
-											<label class="col-xs-3"> Loại xe </label>
+											<label class="col-xs-3"> Kiểu dáng </label>
 											<div class="col-xs-3">
 												<form:select path="model" class="form-control">
-													<form:option value=""> ---Chọn loại xe--- </form:option>
+													<form:option value=""> ---Chọn kiểu dáng--- </form:option>
 													<form:options items="${models}"></form:options>
 												</form:select>
 											</div>
 										</dl>
 										<dl class="form-group">
-											<label class="col-xs-3"> Hãng xe </label>
+											<label class="col-xs-3"> Nhà sản xuất </label>
 											<div class="col-xs-9">
-												<form:select path="brand" class="form-control">
-													<form:option value=""> ---Chọn hãng xe--- </form:option>
+												<form:select path="brand_id" class="form-control">
+													<form:option value=""> ---Nhà sản xuất--- </form:option>
 													<form:options items="${brands}"></form:options>
 												</form:select>
 											</div>
@@ -129,6 +140,21 @@
 											</div>
 										</dl>
 										<dl class="form-group">
+											<label class="col-xs-3"> Link ảnh sản phẩm </label>
+											<div class="col-xs-9">
+												<form:input path="imageURL" class="form-control"/>
+											</div>
+										</dl>
+										<dl class="form-group">
+											<img src="${carEdit.imageURL}" width="680" height="auto" align="right" class="border border-primary">
+										</dl>
+										<dl class="form-group">
+											<label class="col-xs-3"> Mô tả sản phẩm </label>
+											<div class="col-xs-9">
+												<form:input path="description" class="form-control"/>
+											</div>
+										</dl>
+										<dl class="form-group">
 											<label class="col-xs-3"></label>
 											<div class="col-xs-9">
 												<c:if test="${not empty carEdit.id}">
@@ -159,7 +185,12 @@
 				$.each(formData, function(i, v){
 					data["" + v.name + ""] = v.value;
 				})
-				addOrUpdateCar(data);
+				if (data.brand_id != 0 && data.brand_id != null && data.status != 0 && data.status != null) {
+					addOrUpdateCar(data);
+					window.location.href = ("http://localhost:8085/spring-boot/admin/car-edit?Success");
+				} else {
+					window.location.href = "http://localhost:8085/spring-boot/admin/car-edit?Error";
+				}
 			});
 			
 			function addOrUpdateCar(data){

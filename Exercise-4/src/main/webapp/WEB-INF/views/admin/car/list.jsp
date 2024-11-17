@@ -62,9 +62,9 @@
 															</div>
 															<div class="col-sm-6">
 																<div>
-																	<label class="name"> Loại xe </label>
+																	<label class="name"> Kiểu dáng </label>
 																	<form:select path="model" class="form-control">
-																		<form:option value=""> ---Chọn loại xe--- </form:option>
+																		<form:option value=""> ---Chọn kiểu dáng--- </form:option>
 																		<form:options items="${models}"></form:options>
 																	</form:select>
 																</div>
@@ -74,23 +74,23 @@
 													
 													<div class="form-group">
 														<div class="col-xs-12">
-															<div class="col-sm-2">
+															<div class="col-sm-4">
 																<div>
-																	<label class="name"> Hãng xe </label>
+																	<label class="name"> Nhà sản xuất </label>
 																	<form:select path="brand" class="form-control">
-																	<form:option value=""> ---Chọn hãng xe--- </form:option>
+																	<form:option value=""> ---Chọn nhà sản xuất--- </form:option>
 																	<form:options items="${brands}"></form:options>
 																	</form:select>
 																</div>
 															</div>
-															<div class="col-sm-5">
+															<div class="col-sm-4">
 																<label class="name"> Số chỗ </label>
 																<form:input type="number" path="seat" class="form-control"/>
 															</div>
-																<div class="col-sm-5">
+																<div class="col-sm-4">
 																	<label class="name"> Hộp số </label>
 																	<form:select path="transmission" class="form-control">
-																	<form:option value=""> ---Chọn hãng xe--- </form:option>
+																	<form:option value=""> ---Chọn hộp số--- </form:option>
 																	<form:options items="${transmissions}"></form:options>
 																	</form:select>
 																</div>
@@ -140,14 +140,14 @@
 													
 													<div class="form-group">
 														<div class="col-xs-12">
-															<div class="col-sm-3">
+															<div class="col-sm-6">
 																<label class="name"> Tình trạng </label>
 																<form:select path="status" class="form-control">
 																<form:option value=""> ---Chọn tình trạng--- </form:option>
 																<form:options items="${status}"></form:options>
 																</form:select>
 															</div>
-															<div class="col-sm-5">
+															<div class="col-sm-6">
 																<label class="name"> Xuất xứ </label>
 																<form:input path="origin" class="form-control"/>
 															</div>
@@ -189,8 +189,8 @@
 												</label>
 											</th>
 											<th> Tên xe </th>
-											<th> Loại xe </th>
-											<th> Hãng xe </th>
+											<th> Kiểu dáng </th>
+											<th> Nhà sản xuất </th>
 											<th> Số chỗ </th>
 											<th> Hộp số </th>
 											<th> Năm sản xuất </th>

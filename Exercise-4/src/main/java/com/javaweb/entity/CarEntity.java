@@ -55,13 +55,35 @@ public class CarEntity {
 	
 	@Column(name="origin")
 	private String origin;
+	
+	@Column(name="imageURL")
+	private String imageURL;
+	
+	@Column(name="description")
+	private String description;
 
 	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setBrandEntity(BrandEntity brandEntity) {
+		this.brandEntity = brandEntity;
+	}
+
+	public BrandEntity getBrandEntity() {
+		return brandEntity;
+	}
+
+	public String getTransmission() {
+		return transmission;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public String getFuel() {
+		return fuel;
 	}
 
 	public String getName() {
@@ -80,28 +102,12 @@ public class CarEntity {
 		this.model = model;
 	}
 
-	public BrandEntity getBrandEntity() {
-		return brandEntity;
-	}
-
-	public void setBrandEntity(BrandEntity brandEntity) {
-		this.brandEntity = brandEntity;
-	}
-
 	public Integer getSeat() {
 		return seat;
 	}
 
 	public void setSeat(Integer seat) {
 		this.seat = seat;
-	}
-
-	public String getTransmission() {
-		return transmission;
-	}
-
-	public void setTransmission(String transmission) {
-		this.transmission = transmission;
 	}
 
 	public Integer getYear() {
@@ -112,28 +118,12 @@ public class CarEntity {
 		this.year = year;
 	}
 
-	public Integer getPrice() {
-		return price;
-	}
-
-	public void setPrice(Integer price) {
-		this.price = price;
-	}
-
 	public String getEngine() {
 		return engine;
 	}
 
 	public void setEngine(String engine) {
 		this.engine = engine;
-	}
-
-	public String getFuel() {
-		return fuel;
-	}
-
-	public void setFuel(String fuel) {
-		this.fuel = fuel;
 	}
 
 	public Integer getAirbag() {
@@ -167,4 +157,37 @@ public class CarEntity {
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
+
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setTransmission(String transmission) {
+		this.transmission = transmission;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	public void setFuel(String fuel) {
+		this.fuel = fuel;
+	}
+
 }

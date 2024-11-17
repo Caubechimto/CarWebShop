@@ -15,7 +15,21 @@ public class CarSearchResponse extends ResponseDTO{
     private String consumption;
     private String status;
     private String origin;
+    private String imageURL;
+    private String description;
     
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public void setTransmission(String transmission) {
+		this.transmission = transmission;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public void setFuel(String fuel) {
+		this.fuel = fuel;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -34,23 +48,11 @@ public class CarSearchResponse extends ResponseDTO{
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getBrand() {
-		return brand;
-	}
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
 	public Integer getSeat() {
 		return seat;
 	}
 	public void setSeat(Integer seat) {
 		this.seat = seat;
-	}
-	public String getTransmission() {
-		return transmission;
-	}
-	public void setTransmission(String transmission) {
-		this.transmission = transmission;
 	}
 	public Integer getYear() {
 		return year;
@@ -58,23 +60,11 @@ public class CarSearchResponse extends ResponseDTO{
 	public void setYear(Integer year) {
 		this.year = year;
 	}
-	public String getPrice() {
-		return price;
-	}
-	public void setPrice(String price) {
-		this.price = price;
-	}
 	public String getEngine() {
 		return engine;
 	}
 	public void setEngine(String engine) {
 		this.engine = engine;
-	}
-	public String getFuel() {
-		return fuel;
-	}
-	public void setFuel(String fuel) {
-		this.fuel = fuel;
 	}
 	public Integer getAirbag() {
 		return airbag;
@@ -100,4 +90,29 @@ public class CarSearchResponse extends ResponseDTO{
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
+	public String getImageURL() {
+		return imageURL;
+	}
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getBrand() {
+		return brand;
+	}
+	public String getTransmission() {
+		return transmission;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public String getFuel() {
+		return fuel;
+	}
+    
 }

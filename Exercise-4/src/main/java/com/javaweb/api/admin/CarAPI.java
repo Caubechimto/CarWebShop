@@ -40,7 +40,7 @@ public class CarAPI {
 	@PostMapping
 	public void AddOrUpdateCar(@RequestBody CarDTO carDTO) {
 		CarEntity carEntity = modelMapper.map(carDTO, CarEntity.class);
-		carEntity.setBrandEntity(brandService.getById(carDTO.getBrand()));
+		carEntity.setBrandEntity(brandService.getById(carDTO.getBrand_id()));
 		if (carEntity.getId() != null && carEntity.getId() != 0) {
 			entityManager.merge(carEntity);
 		} else {
