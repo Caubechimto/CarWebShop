@@ -60,7 +60,7 @@ public class CarRepositoryImpl implements CarRepository{
 		if (NumberUtils.check(carSearchRequest.getAirbag())) {
 			where.append("AND c.airbag = " + carSearchRequest.getAirbag() + " ");
 		}
-		if (StringUtils.check(carSearchRequest.getFuel())) {
+		if (StringUtils.check(carSearchRequest.getConsumption())) {
 			where.append("AND c.consumption LIKE '%" + carSearchRequest.getConsumption() + "%' ");
 		}
 		if (StringUtils.check(carSearchRequest.getStatus())) {
