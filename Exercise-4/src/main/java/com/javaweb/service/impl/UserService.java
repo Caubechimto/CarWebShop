@@ -188,4 +188,15 @@ public class UserService implements IUserService {
 		}
 		return listStaffs;
 	}
+	
+    @Override
+    @Transactional
+    public UserDTO insertWeb(UserDTO newUser) {
+        RoleEntity role = roleRepository.findOneByCode(newUser.getRoleCode());
+        UserEntity userEntity = userConverter.convertToEntity(newUser);
+        userEntity.setRoles(Stream.of(role).collect(Collectors.toList()));
+        userEntity.setStatus(1);
+        userEntity.setPassword(passwordEncoder.encode(newUser.getPassword()));
+        return userConverter.convertToDto(userRepository.save(userEntity));
+    }
 }
