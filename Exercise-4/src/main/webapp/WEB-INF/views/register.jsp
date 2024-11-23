@@ -9,13 +9,18 @@
 </head>
 <body>
    <div class="container">
+   <c:if test="${param.Error != null}">
+					<div class="alert alert-danger">	
+							Chưa điền đủ thông tin!
+					</div>
+				</c:if>
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card text-white" style="border-radius: 1rem; background-color: #35bf76;">
                     <div class="card-body p-2 px-5 text-center">
                         <div class="md-5 md-4 mt-4 pb-2">
-                            <h2 class="fw-bold mb-2 text-uppercase">Create an account</h2>
-                            <p class="text-white-50 mb-2">Please enter your Information</p>
+                            <h2 class="fw-bold mb-2 text-uppercase">Đăng ký tài khoản</h2>
+                            <p class="text-white-50 mb-2">Vui lòng điền thông tin tài khoản</p>
                             
 							<form id="formEdit">
 	                            <div class="form-outline form-white mb-2">
@@ -46,8 +51,8 @@
 	                            </div>
 							</form>
 
-                            <p class="text-center text-muted mt-2 mb-0">Have already an account? <a href="/spring-boot/login"
-                                                                                                    class="fw-bold text-body"><u style="color: white ;">Login here</u></a></p>
+                            <p class="text-center text-muted mt-2 mb-0">Đã có tài khoản? <a href="/spring-boot/login"
+                                                                                                    class="fw-bold text-body"><u style="color: white ;">Đăng nhập</u></a></p>
 
                         </div>
                     </div>
@@ -69,7 +74,7 @@
 	    if (userName != '') {
 	        addUser(dataArray);
 	    } else {
-	        window.location.href = "http://localhost:8085/spring-boot/register?empty-userName";
+	        window.location.href = "http://localhost:8085/spring-boot/register?Error";
 	    }
 	});
 	
@@ -84,7 +89,7 @@
                 window.location.href = "http://localhost:8085/spring-boot/login";
             },
             error: function (res) {
-            	window.location.href = "http://localhost:8085/spring-boot/register?error";
+            	window.location.href = "http://localhost:8085/spring-boot/register?Error";
             }
         });
     }

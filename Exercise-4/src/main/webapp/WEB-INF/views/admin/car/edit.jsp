@@ -185,7 +185,7 @@
 				$.each(formData, function(i, v){
 					data["" + v.name + ""] = v.value;
 				})
-				if (data.brand_id != 0 && data.brand_id != null && data.status != 0 && data.status != null) {
+				if (data.brand_id != 0 && data.brand_id != null && data.status != 0 && data.status != null && data.name != "" && data.name != null) {
 					addOrUpdateCar(data);
 					window.location.href = ("http://localhost:8085/spring-boot/admin/car-edit?Success");
 				} else {
