@@ -1,5 +1,6 @@
 package com.javaweb.controller.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -63,6 +64,22 @@ public class HomeController {
 		CarEntity carEntity = carService.find(id);
 		CarSearchResponse result = carConverter.fromCEToCSR(carEntity);
 		mav.addObject("carDetail", result);
+		
+		List<CarSearchResponse> allCar = carService.findCars(new CarSearchRequest());
+		mav.addObject("allCar", allCar);
+		
+		return mav;
+	}
+	
+	@GetMapping(value="/so-sanh-{id1}-{id2}")
+	public ModelAndView carCompare(@PathVariable Integer id1, @PathVariable Integer id2) {
+		ModelAndView mav = new ModelAndView("web/compare");
+		CarEntity car1 = carService.find(id1);
+		CarSearchResponse result1 = carConverter.fromCEToCSR(car1);
+		CarEntity car2 = carService.find(id2);
+		CarSearchResponse result2 = carConverter.fromCEToCSR(car2);
+		mav.addObject("car1", result1);
+		mav.addObject("car2", result2);
 		return mav;
 	}
 

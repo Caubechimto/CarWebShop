@@ -68,7 +68,6 @@
 											<div class="text-center">
 												<p class="mb-0 tex-center account">Chưa có tài khoản? <a href="/spring-boot/register" class="text-white-50 fw-bold">Đăng ký</a></p>
 											</div>
-
 										</div>
 									</div>
 								</div>

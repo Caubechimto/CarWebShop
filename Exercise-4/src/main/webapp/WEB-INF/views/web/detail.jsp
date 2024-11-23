@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@include file="/common/taglib.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -104,10 +103,20 @@
 							    <small class="price-label">Xuất xứ</small>
 							</div>
 						</div>
+						<input type="hidden" name="carDetailId" id="carDetailId" value="${carDetail.id}">
 					</div>
 				</div>
 			</div> 
 	            <button class="btn btn-primary btn-report-price mb-2">Đặt lịch lái thử và nhận ưu đãi!</button>
+	            <div>
+	            	<select name="selectedCar" id="selectedCar">
+            <option value="">---Chọn xe----</option>
+            <c:forEach var="car" items="${allCar}">
+                <option value="${car.id}">${car.name}</option>
+            </c:forEach>
+        </select>
+	            	<button name="compare" id="compare" class="btn btn-primary btn-report-price mb-2">So sánh ngay!</button>
+	            </div>
         </div>
 	</div>
 
@@ -188,6 +197,22 @@
 </div>
 </form:form>
 </div>
+<script src="web/vendor/jquery/jquery.min.js"></script>
+<script>
+	
+$('#compare').click(function(e){
+	e.preventDefault();
+	var car1 = $('#carDetailId').val();
+	var car2 = $('#selectedCar').val();
+	if (!car2) {
+		return;
+	} else {
+		window.location.href="http://localhost:8085/spring-boot/so-sanh-" + car1 + "-" + car2;
+	}
+});
+	
+</script>
+
 </body>
 
 </html>
