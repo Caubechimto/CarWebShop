@@ -6,6 +6,7 @@ import com.javaweb.model.dto.UserDTO;
 import com.javaweb.service.IUserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,6 +28,9 @@ public class CustomUserDetailService implements UserDetailsService {
         UserDTO userDTO = userService.findOneByUserName(name);
         if(userDTO == null){
             throw new UsernameNotFoundException("Username not found");
+        }
+        if(userDTO.getStatus() == 0) {
+        	throw new DisabledException("User not found");
         }
         List<GrantedAuthority> authorities = new ArrayList<>();
         for(RoleDTO role: userDTO.getRoles()){

@@ -65,14 +65,14 @@
         <li class="">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fas fa-users"></i>
-                <span class="menu-text">Quản Lý Toà Nhà</span>
+                <span class="menu-text">Quản Lý Xe</span>
             </a>
             <b class="arrow"></b>
             <ul class="submenu">
                 <li class="">
-                    <a href='/spring-boot/admin/building-list'>
+                    <a href='/spring-boot/admin/car-list'>
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Danh sách toà nhà
+                        Danh sách xe
                     </a>
                     <b class="arrow"></b>
                 </li>

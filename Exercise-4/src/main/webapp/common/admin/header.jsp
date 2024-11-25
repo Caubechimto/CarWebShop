@@ -23,7 +23,7 @@
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="/admin/profile-<%=SecurityUtils.getPrincipal().getUsername()%>">
+                            <a href="/spring-boot/admin/profile-<%=SecurityUtils.getPrincipal().getUsername()%>">
                                 <i class="ace-icon fa fa-user"></i>
                                 <%--<spring:message code="label.account.information"/>--%>
                                 Thông tin tài khoản
